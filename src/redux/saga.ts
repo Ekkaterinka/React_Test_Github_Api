@@ -14,7 +14,7 @@ import {
 } from './slices/detailsSlice'
 
 function filterChangeSearchAction({type, payload}:{ type:any, payload:any }) {
-    return type === changeUsersField().type && payload.search.trim() !== '';
+    return type === changeUsersField(payload).type && payload.search.trim() !== '';
 }
 function* handleChangeSearchSaga(action:any) {
     yield put(searchUsersRequest(action.payload.search));
