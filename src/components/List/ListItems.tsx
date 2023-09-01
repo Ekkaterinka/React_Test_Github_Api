@@ -18,7 +18,7 @@ export default function ListItems() {
 
     useEffect(() => {
         setFilterData(
-            items.items?.filter((item: any, index: number) => {
+            items.items?.filter((_item: any, index: number) => {
                 return (index >= page * quantity) && (index < (page + 1) * quantity);
             })
         );
