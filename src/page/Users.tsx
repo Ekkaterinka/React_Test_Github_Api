@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { changeUsersField, clearSearch } from "../redux/slices/usersSlice";
-import { NavLink } from "react-router-dom";
+import ListItems from "../components/List/ListItems";
 
 export default function Users() {
-    const { items, loading, error, search } = useSelector((state: any) => state.users);
+    const { loading, error, search } = useSelector((state: any) => state.users);
+    const items = useSelector((state: any) => state.users.items);
     const dispatch = useDispatch();
 
     const handleSearch = (evt: any) => {
@@ -12,11 +13,8 @@ export default function Users() {
         else { dispatch(changeUsersField({ search: value })); }
     };
     const hasQuery = search.trim() !== '';
-    const List = items.items?.map((el: any) =>
-            <li key={el.id}><NavLink to={`/${el.login}/details`}>
-                <img src={el.avatar_url} className="Avatar" />
-                {el.login}</NavLink></li>
-);
+
+
 
     return (
         <div className="container">
@@ -28,12 +26,11 @@ export default function Users() {
                 {!hasQuery && <div>Введите что-нибудь для поиска</div>}
                 {hasQuery && loading && <div>searching...</div>}
             </div>
+            {items.items?.length === 0 && <p className="Never">Ничего не найдено!</p> }
             {error ?
                 <div>Error occured</div>
                 :
-                <div className="list">
-                    {List}
-                </div>}
+                <ListItems />}
         </div>
     )
 }

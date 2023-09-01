@@ -18,7 +18,7 @@ a {
   font-weight: 500;
   color: white;
   text-decoration: inherit;
-  margin-left: 15px;
+
 }
 
 a:hover {
@@ -96,6 +96,48 @@ li {
 }
 
 .search {
-  margin: 20%;
+  margin: 10%;
   color: white;
+}
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.page-item {
+  list-style: none;
+  padding: 2px 12px;
+  height: 31.5px;
+  width: 31.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+} 
+.active a {
+  color: #535bf2;
+}
+
+.DetailsUser {
+  position: fixed;
+  top: 50%;
+  left: 10%;
+  color: white;
+  display: flex;
+  
+}
+
+.AvatarUser {
+  height: 200px;
+  margin: 15px;
+}
+
+.Never {
+  color: white;
+  font-size: 24px;
+  margin: 10%;
 }

@@ -1,4 +1,4 @@
-import Users from "./components/Users";
+import Users from "./page/Users";
 import Details from "./components/Details";
 import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
